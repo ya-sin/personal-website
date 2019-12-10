@@ -1,0 +1,160 @@
+
+html {
+    font-size: 100%;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: DarkSlateGrey;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.35em;
+    letter-spacing: .02em;
+    margin: 3em 1.5em;
+}
+main {
+    margin: 4em 0;
+    padding: 0vw 2.5em;
+}
+nav {
+    text-align: center;
+    line-height: 1em;
+}
+.text-larger {
+    font-size: 2em;
+}
+.text-large {
+    font-size: 1.5em;
+}
+.text-medium {
+    font-size: 1.25em;
+}
+.text-small {
+    font-size: 1.1em;
+}
+.text-smaller {
+    font-size: 0.75em;
+}
+nav>.navigator {
+    display: inline-block;
+    width: 50%;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    color: DarkSlateGrey;
+    float: left;
+}
+a:hover {
+    color: #660000;
+}
+
+
+
+.name {
+    padding: 1.5em 0 1em 0;
+}
+.name>.name_text {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.25em;
+    letter-spacing: 0px;
+    margin: 0;
+}
+
+.about {
+    margin-bottom: 5em;
+    display: grid;
+    grid-template-areas: 'about_text about_picture';
+    grid-template-columns: 1fr 1fr;
+}
+
+.about>.about_text {
+    grid-area: about_text;
+    margin: 0 0 0 1.2em;
+}
+
+.about>.about_picture {
+    grid-area: about_picture;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.text-center {
+    text-align: center;
+}
+
+footer {
+    margin: 6vw 0;
+    padding: 0 6vw;
+}
+
+.research {
+    margin-bottom: 5em;
+}
+.CV {
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+}
+.CV>.CV_title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.CV>.CV_description {
+    margin: 0;
+}
+.CV>.CV_picture {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-top: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.blog {
+    margin-bottom: 5em;
+}
+.research_title {
+    margin: 0;
+}
+
+.research_description {
+    margin: 1.5em 0;
+}
+
+.research_contents {
+    padding-top: 1.5em;
+}
+.contents_title {
+    margin-bottom: 2em;
+}
+.content {
+    display: grid;
+    grid-template-areas: 'content_text content_picture';
+    grid-template-columns: 70% 30%;
+    margin-bottom: 2em;
+}
+
+.content_picture {
+    grid-area: content_picture;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.content_text {
+    grid-area: content_text;
+    margin: 0;
+}
+
