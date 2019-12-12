@@ -3,8 +3,10 @@
 <head>
   <title>Ya-Sin Luo</title>
   <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
 </head>
 <body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <header class="name" id="home">
       <h1 class="name_text text-larger">Ya-Sin Luo</h1>
     </div>
@@ -13,10 +15,10 @@
   <!-- Navbar -->
   <nav>
     <div class="navigator text-small">
-      <a href="#home" style="width:25%" class="firstitime">About Me</a>
-      <a href="#ResearchProjects" style="width:25%" class="navitem">Research</a>
-      <a href="#CV" style="width:25%" class="navitem">CV</a>
-      <a href="#blog" style="width:25%" class="navitem">Blog</a>
+      <a href="#home" class="firstitime">About Me</a>
+      <a href="#ResearchProjects" class="navitem">Research</a>
+      <a href="#CV"  class="navitem">CV</a>
+      <a href="#blog" class="navitem">Blog</a>
     </div>
   </nav>
 
@@ -24,22 +26,20 @@
   <main>
     <div class="block_about about">
         <img src="img/yasin.jpeg" class="about_picture">
-        <p class="about_text text-small">Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi!
-                                          My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!
-                                        My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!
-                                      My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!</p>
+        <p class="about_text text-small">Hello! My name is Ya-Sin Luo(it is also written as 羅雅馨 in Chinese). I’m a fourth-year undergraduate student at the National Cheng Kung University. I am majoring in Computer Science and Information.<br><br>
+                                        During my undergraduate education,  I worked with <a href="http://robotics.csie.ncku.edu.tw/" target="_blank">Dr. Jenn-Jier Lien</a> in the Computer Science Department to develop a human-robot interaction project and <a href="https://sites.google.com/site/nckuikm/home" target="_blank">Dr. Hung-Yu Kao</a> to improve the maintainability and usability of a website project.<br><br>After my undergrad, I plan to attend graduate school and continue doing research in computer science. I’m interested in how computer vision reaches human-level reasoning, how people integrate theory and practice into applications in self-driving vehicles, and how to utilize virtual/augmented reality to test and improve products. During my leisure time, I enjoy hiking, dancing, and writing both Chinese and English calligraphy.</p>
     </div>
+
+    <hr>
 
     <!-- Research Projects-->
     <div id="ResearchProjects" class="block_research research">
       <h2 class="research_title text-center text-large">Research Projects</h1>
-      <p class="research_description text-center text-small">My research works on computer vision and human-robot interaction!<br>
-                                                            My research works on computer vision and human-robot interaction!<br>
-                                                          My research works on computer vision and human-robot interaction!</p>
+      <p class="research_description text-center text-small">My research interests lie at the intersection of computer vision, cognition, and human-computer interaction. My researches focus on applying deep learning techniques to process visual signal, integrating systems, and designing and implement an automatic procedure. </p>
       <nav class="research_nav">
         <div class="navigator text-small">
-          <a href="#research" style="width:50%" class="firstitime">Research</a>
-          <a href="#projects" style="width:50%" class="navitem">Other experiments & Class projects</a>
+          <a href="#research" class="firstitime">Research</a>
+          <a href="#projects" class="navitem">Other experiments & Class projects</a>
         </div>
       </nav>
 
@@ -47,45 +47,116 @@
       <div id="research" class="research_contents">
         <h3 class="contents_title text-center text-medium">Research</h3>
 
-        <div class="contents_content content text-small">
-          <img src="img/yasin.jpeg" class="content_picture">
-          <p class="content_text">Hi! My name is Ya-Sin Luo!<br>Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!</p>
-        </div>
-
-        <div class="contents_content content text-small">
-          <img src="img/yasin.jpeg" class="content_picture">
-          <p class="content_text">Hi! My name is Ya-Sin Luo!<br>Hi! My name is Ya-Sin Luo!Hi! My name is Ya-Sin Luo!</p>
+        <div class="contents_content content content-left text-small">
+          <img src="img/robotarm.jpg" class="content_picture">
+          <p class="content_text"><topic>Robotic Eye-In-Hand Camera for Select-and-Place Tasks</topic><br><br>
+            Robotics industrial automation benefits production. Many manufacturers are using different forms of
+            automation to get higher quality and efficiency. However, industrial robots are highly repeatable but
+             not accurate, therefore, we are motivated to use eye-in-hand robotic arms to implement a well-designed
+              automatic procedure.<br>The objectives include robot arm calibration, object detection, digit
+               recognition, and system integration.<br>
+               [<a href="https://youtu.be/Vo9u7PsUS0s" target="_blank">video</a>]
+               [<a href="document/RobotArm_Calib_Contrel2_20190829_V1Beta1_YaXin_ZheKuan.pptx" target="_blank">ppt</a>]
+               [<a href="document/RobotArm_poster.pdf" target="_blank">poster</a>]
+               [<a href="document/abstract.pdf" target="_blank">pdf</a>]
+          </p>
         </div>
 
       </div>
       <!-- projects -->
       <div id="projects" class="research_contents">
         <h3 class="contents_title text-center text-medium">Other experiments & Class projects</h3>
-        <div class="contents_content content text-small">
-            <img src="img/yasin.jpeg" class="content_picture">
-            <p class="content_text">Hi! My name is Ya-Sin Luo!</p>
+        <div class="contents_content content content-right text-small">
+            <img src="img/web.png" class="content_picture">
+            <p class="content_text"><topic>Department of Computer Science and Information Engineering, NCKU Website</topic><br><br>
+              Recently, there is vigorous development in web technologies, so how to solve the problem of
+              upgrading is crucial. Also, more new applications have been developed based on websites. These
+              skills seem to be out of reach for college students, but it’s not true. Therefore, our goals are:<br>
+              1. Reconstruct department’s website with new web technologies<br>
+              2. Promote academic exchanges<br>
+              3. Cultivate young blood into web development<br>
+               [<a href="http://140.116.246.1:3000/?languageId=1" target="_blank">website</a>]
+               [<a href="https://github.com/toolbuddy/NCKU-CSIE-Website/tree/develop" target="_blank">github</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-left text-small">
+            <img src="img/timinglogo.jpg" class="content_picture">
+            <p class="content_text"><topic>Messenger Chatbot-TimingBot</topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="https://github.com/ya-sin/messenger_chatbot" target="_blank">github</a>]
+              [<a href="https://medium.com/timingdance2017" target="_blank">Timing</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-right text-small">
+            <img src="img/compiler.png" class="content_picture">
+            <p class="content_text"><topic>μC Compiler for Java Assembly Code Generation</topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="https://github.com/ya-sin/compiler" target="_blank">github</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-left text-small">
+            <img src="img/Elm.png" class="content_picture">
+            <p class="content_text"><topic>Programing Language - Elm </topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="./document/Elm_Vocabulary/index.html" target="_blank">website</a>]
+              [<a href="https://docs.google.com/presentation/d/1E7woMzKNcNZUrISTkA5N5XLPt07ElFUcqtvPLkcVBtQ/edit?ts=5db9917f#slide=id.p1" target="_blank">ppt</a>]
+              [<a href="./document/Elm.html" target="_blank">notes</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-right text-small">
+            <img src="img/java.png" class="content_picture">
+            <p class="content_text"><topic>Game with Chatroom in Java </topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="document/java.pdf" target="_blank">ppt</a>]
+              [<a href="https://github.com/ya-sin/java_game" target="_blank">github</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-left text-small">
+            <img src="img/amplier.png" class="content_picture">
+            <p class="content_text"><topic>Headphone Amplier </topic><br>Hi! My name is Ya-Sin Luo!<br>
+            </p>
+        </div>
+
+        <div class="contents_content content content-right text-small">
+            <img src="img/slot-machine.png" class="content_picture">
+            <p class="content_text"><topic>Slot Machine</topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="document/slotmachine.pdf" target="_blank">ppt</a>]
+              [<a href="https://github.com/ya-sin/java_game" target="_blank">video</a>]
+            </p>
+        </div>
+
+        <div class="contents_content content content-left text-small">
+            <img src="img/open-source.png" class="content_picture">
+            <p class="content_text"><topic>Open-source Software Development and Community Promotion</topic><br>Hi! My name is Ya-Sin Luo!<br>
+              [<a href="document/open-source.pdf" target="_blank">ppt</a>]
+            </p>
         </div>
       </div>
 
     </div>
 
+    <hr>
+
     <!-- CV section -->
     <div id="CV" class="block_CV CV" >
-      <a href="document/CurriculumVitae_YA-SIN_LUO.pdf" class="CV_title text-center text-large">CV</a>
+      <a href="document/CurriculumVitae_YA-SIN_LUO.pdf" class="CV_title text-center text-large" target="_blank">CV</a>
       <p class="CV_description text-center text-smaller">Last updated: Dec 2019</p>
-      <img src="img/yasin.jpeg" class="CV_picture">
+      <img src="img/CV.jpeg" class="CV_picture">
     </div>
+
+    <hr class="divisioner">
 
     <div id="blog" class="block_blog blog">
       <h2 class="research_title text-large text-center">Blog</h1>
       <p class="research_description text-center text-small"><i>Sharing something in my life!</i>
-      <div class="contents_content content text-small">
+      <div class="contents_content content content-left text-small">
           <img src="img/yasin.jpeg" class="content_picture">
-          <p class="content_text">Hi! My name is Ya-Sin Luo!</p>
+          <p class="content_text"><topic>Robotic Arm Application: Select-Place Tasks</topic><br>Hi! My name is Ya-Sin Luo!</p>
       </div>
-      <div class="contents_content content text-small">
+      <div class="contents_content content content-right text-small">
           <img src="img/yasin.jpeg" class="content_picture">
-          <p class="content_text">Hi! My name is Ya-Sin Luo!</p>
+          <p class="content_text"><topic>Robotic Arm Application: Select-Place Tasks</topic><br>Hi! My name is Ya-Sin Luo!</p>
         </div>
 
     </div>
@@ -94,6 +165,27 @@
   <footer class="text-center text-smaller">
     <em>To contact me, email: luoyasin {at} gmail {dot} com</em>
   </footer>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
 
 </body>
 </html>
