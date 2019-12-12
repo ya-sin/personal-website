@@ -92,7 +92,7 @@ a:hover {
 .about {
     margin-bottom: 5em;
     display: grid;
-    grid-template-areas: 'about_text about_picture';
+    grid-template-areas: 'about_text about_picture' 'about_text about_picture';
     grid-template-columns: 1fr 1fr;
     line-height: 1.75em;
 
@@ -115,6 +115,8 @@ a:hover {
         margin-top: 1.2em;
     }
 }
+
+
 
 .about>.about_picture {
     grid-area: about_picture;
@@ -240,8 +242,8 @@ hr {
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 40px;
+  right: 40px;
   z-index: 99;
   font-size: 18px;
   border: none;
