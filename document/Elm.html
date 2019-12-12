@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Elm - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;padding:0 15px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-published-note{color:#337ab7}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="Elm"><a class="anchor hidden-xs" href="#Elm" title="Elm"><span class="octicon octicon-link"></span></a>Elm</h1><h2 id="Reference"><a class="anchor hidden-xs" href="#Reference" title="Reference"><span class="octicon octicon-link"></span></a>Reference</h2><ul>
+<li><img alt=":heart:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/heart.png" title=":heart:"> <a href="https://css-tricks.com/elm-get-started/" target="_blank" rel="noopener">Why Elm?</a><br>
+What/Why Functional Programming Language<br>
+-&gt; Elm: Functional Programming Language for the web<br>
+-&gt;</li>
+<li><a href="https://elmprogramming.com/" target="_blank" rel="noopener">begining elm</a></li>
+<li><a href="https://elm-lang.org" target="_blank" rel="noopener">official web</a></li>
+<li><a href="https://discourse.elm-lang.org/" target="_blank" rel="noopener">elm community</a></li>
+<li><a href="https://guide.elm-lang.org/?fbclid=IwAR1qrx2gIKJmjyOHFKC9vjEFW-b5raypdtTL8e1c3iTviy-TMmx84DUKy_M" target="_blank" rel="noopener">Document</a></li>
+<li>Elm Tutorial： <a href="https://www.elm-tutorial.org/" target="_blank" rel="noopener">Offical</a> / <a href="https://riptutorial.com/elm/example/7220/initialize-and-build?fbclid=IwAR3TesgCZLlbaFWj7ylfSAqPhuWxSCzCAEMOaUD9qzp5M4eI97GGEeuc46A" target="_blank" rel="noopener">RIP Tutorial</a></li>
+<li>Elm Introduction：<a href="https://rhadow.github.io/2016/04/23/elm-introduction/?fbclid=IwAR0Q5ZQBxz44Q17oui7N3DiRT02Ts9gKA5Y5jrKAiFnJCEyZ6KZLreJlNrg" target="_blank" rel="noopener">Rhadow’s Tech Note</a></li>
+<li>Elm project：<a href="https://github.com/evancz/elm-todomvc?fbclid=IwAR1_pNwI4EfQX-Jg04SFRyWfIfeM254mh0kzHXNVyvUIP-78iEGlyixdkRU" target="_blank" rel="noopener">to-do list</a>  /  <a href="https://github.com/KJC1004/elm-tankio-sandbox" target="_blank" rel="noopener">game</a></li>
+</ul><h2 id="什麼是Elm？"><a class="anchor hidden-xs" href="#什麼是Elm？" title="什麼是Elm？"><span class="octicon octicon-link"></span></a>什麼是Elm？</h2><blockquote>
+<p><small><i class="fa fa-user"></i>  羅雅馨</small></p>
+</blockquote><h3 id="簡單來說…"><a class="anchor hidden-xs" href="#簡單來說…" title="簡單來說…"><span class="octicon octicon-link"></span></a>簡單來說…</h3><p>強型別的函數式語言，可以compile成javascript，可以用於WEB前端的開發，著重於程式碼的簡易以及方便使用、方便測試</p><h3 id="Feature-official-meantioned"><a class="anchor hidden-xs" href="#Feature-official-meantioned" title="Feature-official-meantioned"><span class="octicon octicon-link"></span></a>Feature (official meantioned)</h3><ol>
+<li>no runtime exception
+<ul>
+<li>Elm 在編譯階段就會抓出許多潛在的錯誤，大大降低在執行時的出錯</li>
+<li>Elm 會利用 Type inference 偵測一些狀態，有任何型別上的錯誤都會被抓出來，Elm 也提供了很人性化 hint</li>
+<li>" Type inference " is the automatic deduction of the data types of specific expressions in a programming language, usually done at compile time. It involves analyzing a program and then inferring the different types of some or all expressions in that program so that the programmer does not need to explicitly input and define data types every time variables are used in the program.</li>
+</ul>
+</li>
+<li>great performance
+<ul>
+<li>Elm 使用 virtual DOM (React亦適用此技術)來實作，因此擁有更快的速度，再加上所有的 valuable 在 Elm 中有 immutable 這個性質，使得產生出來的javascript可以有更好的執行效率</li>
+<li>render速度快</li>
+</ul>
+</li>
+<li>enforce semantic visioning
+<ul>
+<li>Elm 因為有 type system ，所以能自動偵測所有的 API 有無更動，並根據你 release 時與上一版本的差異，進行 Semantic Versioning，讓你不會不小心因為錯誤的 PATCH release 造成別人的困擾！</li>
+<li>Elm can detect all API changes automatically thanks to its type system. We use that information to guarantee that every single Elm package follows semantic versioning precisely. No more surprises in PATCH releases!</li>
+</ul>
+</li>
+<li>small asset
+<ul>
+<li>當compile時加上–optimize，Elm能有效地對程式碼做最佳化，達到所謂的small asset(faster downloads and faster page loads)</li>
+<li>Elm 宣稱其 Optimize 的編譯，能產生比 React 16.4 更小的 Assets。</li>
+</ul>
+</li>
+<li>javascript interop
+<ul>
+<li>如同 React 一樣，你也可以只在一個小小的 node(ex:div) 上掛載 Elm application，藉此來測試 project 中的某一個小部分，採用上可以循序漸進，因此不會有太大風險，</li>
+<li>plus,由於是編譯成 JavaScript，因此 Elm 能方便的與一般的 JavaScript 溝通。</li>
+</ul>
+</li>
+<li>Concurrency (extra)</li>
+<li>nctional Reactive Programming (extra)</li>
+</ol><h3 id="REPL的編程環境"><a class="anchor hidden-xs" href="#REPL的編程環境" title="REPL的編程環境"><span class="octicon octicon-link"></span></a>REPL的編程環境</h3><ul>
+<li>The REPL lets you interact with Elm values and functions in your terminal</li>
+<li><a href="http://elmrepl.cuberoot.in/" target="_blank" rel="noopener">web repl</a></li>
+<li>Read-Eval-Print Loop的縮寫，  ex.python讀入函數接收一個來自於用戶的表達式，將其解析成資料結構並存入內存。求值函數　負責處理內部的資料結構並對其求值。輸出函數接受求值結果，並呈現將其給用戶。較「編輯-編譯-運行-調試」能更快的看到結果，對於初學語言有很大的幫助。</li>
+<li>with rebinding process<br>
+<a href="http://debug.elm-lang.org/" target="_blank" rel="noopener">Time-Traveling Debugger</a>:<br>
+對於同一行的code，在不停止或重啟程式的情況下，可以不斷的去debug</li>
+</ul><h3 id="參考"><a class="anchor hidden-xs" href="#參考" title="參考"><span class="octicon octicon-link"></span></a>參考</h3><p>kk<br>
+<a href="https://blog.techbridge.cc/2019/04/22/elm-chrome-extension/" target="_blank" rel="noopener">TB blog</a><br>
+<a href="https://elm-lang.org" target="_blank" rel="noopener">official web</a><br>
+<a href="https://rhadow.github.io/2016/04/23/elm-introduction/?fbclid=IwAR0Q5ZQBxz44Q17oui7N3DiRT02Ts9gKA5Y5jrKAiFnJCEyZ6KZLreJlNrg" target="_blank" rel="noopener">Rhadow’s Tech Note</a></p><h2 id="特性（Benefits-of-Using-Elm–immutablepure-function）"><a class="anchor hidden-xs" href="#特性（Benefits-of-Using-Elm–immutablepure-function）" title="特性（Benefits-of-Using-Elm–immutablepure-function）"><span class="octicon octicon-link"></span></a>特性（Benefits of Using Elm–immutable/pure function）</h2><blockquote>
+<p><small><i class="fa fa-user"></i>  羅雅馨</small></p>
+</blockquote><h3 id="Immutability"><a class="anchor hidden-xs" href="#Immutability" title="Immutability"><span class="octicon octicon-link"></span></a>Immutability</h3><h4 id="Immutable-constant"><a class="anchor hidden-xs" href="#Immutable-constant" title="Immutable-constant"><span class="octicon octicon-link"></span></a>Immutable constant</h4><ul>
+<li>
+<p>對於一變數，若已給定值，則無法再給一次值(not allow reasigned in the same scope)</p>
+</li>
+<li>
+<p>變數一產生就視為constant，因此在Elm中沒有所謂的variable</p>
+</li>
+<li>
+<p>we’re familiar to … ( mutating its original value)</p>
+</li>
+</ul><pre><code>var x = 1;
+x = x + 1; // x = 2
+</code></pre><ul>
+<li>BUT it doesn’t allow mutation in Elm<br>
+Elm will try to expand the definition further as shown below creating an infinite loop:</li>
+</ul><pre><code>x = x + 1
+x = (x + 1) + 1
+x = ((x + 1) + 1) + 1
+x = (((x + 1) + 1) + 1) + 1
+x = ((((x + 1) + 1) + 1) + 1) + 1
+</code></pre><ul>
+<li>
+<p>Solve by … giving a new name</p>
+<p>EX1</p>
+<pre><code>x = 1
+xPlus1 = x + 1
+</code></pre>
+<p>EX2</p>
+<pre><code>&gt; x = { name = "Chris", age = 30 }
+{ name = "Chris", age = 30 } : { name : String, age : number }
+
+&gt; y = { x | age = x.age + 1 }
+{ name = "Chris", age = 31 } : { name : String, age : number }
+
+&gt; y
+{ name = "Chris", age = 31 } : { name : String, age : number }
+
+&gt; x
+{ name = "Chris", age = 30 } : { name : String, age : number }
+</code></pre>
+</li>
+</ul><h4 id="Immutable-Collections"><a class="anchor hidden-xs" href="#Immutable-Collections" title="Immutable-Collections"><span class="octicon octicon-link"></span></a>Immutable Collections</h4><p><img src="https://i.imgur.com/huI6aH4.png" alt=""></p><ul>
+<li>The original content has remained intact</li>
+<li>Elm point to the original list, added 4 and 5 to it, and returned it as the result.</li>
+<li>Elm point to the original list, drop first one number, and returned it as the result.</li>
+</ul><p><img src="https://i.imgur.com/WujAZM2.png" alt=""></p><h4 id="Benefits-of-Immutability--在比較那裏講呢-"><a class="anchor hidden-xs" href="#Benefits-of-Immutability--在比較那裏講呢-" title="Benefits-of-Immutability--在比較那裏講呢-"><span class="octicon octicon-link"></span></a>Benefits of Immutability ( <em><strong>在比較那裏講呢?</strong></em> )</h4><ul>
+<li>
+<p>it allows us to write programs that behave as expected</p>
+<ul>
+<li>expected<br>
+<img src="https://elmprogramming.com/images/immutability/mutation-expected-result.png" alt=""></li>
+<li>unexpected<br>
+<img src="https://elmprogramming.com/images/immutability/mutation-unexpected-result.png" alt=""></li>
+</ul>
+</li>
+</ul><h4 id="參考1"><a class="anchor hidden-xs" href="#參考1" title="參考1"><span class="octicon octicon-link"></span></a>參考</h4><p>kk<br>
+<a href="http://elmprogramming.com/immutability.html" target="_blank" rel="noopener">Immutability</a></p><h3 id="Pure-function"><a class="anchor hidden-xs" href="#Pure-function" title="Pure-function"><span class="octicon octicon-link"></span></a>Pure function</h3><h4 id="簡單來說…1"><a class="anchor hidden-xs" href="#簡單來說…1" title="簡單來說…1"><span class="octicon octicon-link"></span></a>簡單來說…</h4><ol>
+<li>
+<p>對於相同的輸入，皆會傳回相同的輸出，regardless of the order they’re applied in.</p>
+</li>
+<li>
+<p>it shouldn’t cause any side effects.<br>
+(a function causes a side effect if it performs any other action apart from calculating its return value.)</p>
+<ul>
+<li>Elm example</li>
+</ul>
+<pre><code>&gt; scores
+[316,320,312,370,337,318,314]
+
+&gt; scoresLessThan320 scores
+[316,312,318,314]
+
+&gt; doubleScores scores
+[632,640,624,740,674,636,628]
+</code></pre>
+<pre><code>&gt; scores
+[316,320,312,370,337,318,314]
+
+&gt; doubleScores scores
+[632,640,624,740,674,636,628]
+
+&gt; scoresLessThan320 scores
+[316,312,318,314]
+</code></pre>
+<ul>
+<li>Javascript example</li>
+</ul>
+<pre><code>&gt; scores
+[316, 320, 312, 370, 337, 318, 314]
+
+&gt; scoresLessThan320(scores)
+[316, 312, 318, 314]
+
+&gt; doubleScores(scores)
+[632, 624, 636, 628]
+</code></pre>
+<pre><code>&gt; scores
+[316, 320, 312, 370, 337, 318, 314]
+
+&gt; doubleScores(scores)
+[632, 640, 624, 740, 674, 636, 628]
+
+&gt; scoresLessThan320(scores)
+[]
+</code></pre>
+</li>
+</ol><h4 id="Benefits-of-Pure-Functions"><a class="anchor hidden-xs" href="#Benefits-of-Pure-Functions" title="Benefits-of-Pure-Functions"><span class="octicon octicon-link"></span></a>Benefits of Pure Functions</h4><ol>
+<li>Easy to understand code</li>
+<li>Easy to debug</li>
+<li><a href="https://elmprogramming.com/easy-to-test.html" target="_blank" rel="noopener">Easy to test</a></li>
+<li><a href="https://elmprogramming.com/function-composition.html" target="_blank" rel="noopener">Solving complex problems with simple functions</a></li>
+</ol><h4 id="參考2"><a class="anchor hidden-xs" href="#參考2" title="參考2"><span class="octicon octicon-link"></span></a>參考</h4><p>kk<br>
+<a href="https://rhadow.github.io/2016/04/23/elm-introduction/?fbclid=IwAR0Q5ZQBxz44Q17oui7N3DiRT02Ts9gKA5Y5jrKAiFnJCEyZ6KZLreJlNrg" target="_blank" rel="noopener">Rhadow’s Tech Note</a><br>
+<a href="http://elmprogramming.com/pure-functions.html" target="_blank" rel="noopener">Example　for Pure Functions</a></p><h2 id="架構（model-update-view）"><a class="anchor hidden-xs" href="#架構（model-update-view）" title="架構（model-update-view）"><span class="octicon octicon-link"></span></a>架構（model, update, view）</h2><blockquote>
+<p><small><i class="fa fa-user"></i>  潘荏羽</small></p>
+</blockquote><h3 id="The-Basic-Pattern"><a class="anchor hidden-xs" href="#The-Basic-Pattern" title="The-Basic-Pattern"><span class="octicon octicon-link"></span></a>The Basic Pattern</h3><p>The logic of every Elm program will break up into <strong>three</strong> cleanly separated parts:</p><ol>
+<li><em><strong>Model</strong></em> —</li>
+</ol><blockquote>
+<p>the state of your application<br>
+將網頁上的應用分為不同狀態，並且記載於此區塊</p>
+</blockquote><ol start="2">
+<li><em><strong>Update</strong></em> —</li>
+</ol><blockquote>
+<p>a way to update your state<br>
+處理事件，並根據事件的發生更新整個Model。runtime時，任何事件可被轉換成message和接收。</p>
+</blockquote><ol start="3">
+<li><em><strong>View</strong></em> —</li>
+</ol><blockquote>
+<p>a way to view your state as HTML<br>
+視現在的Model為參數接收，轉為使用者的介面，大多以HTML顯示。</p>
+</blockquote><p><img src="https://i.imgur.com/QxFRyGu.png" alt=""></p><h3 id="Elm-Architecture"><a class="anchor hidden-xs" href="#Elm-Architecture" title="Elm-Architecture"><span class="octicon octicon-link"></span></a>Elm Architecture</h3><p><img src="https://i.imgur.com/QUkVn5z.png" alt=""></p><ol>
+<li>Model代表瀏覽器現在的狀態，並且作為View的輸入</li>
+<li>產生瀏覽器上所呈現的樣子</li>
+<li>Message有兩種來源，分別是來自於程式內部的改變，以及瀏覽器上的變動產生。</li>
+<li>Message被送進Elm Runtime</li>
+<li>Elm Runtime會call Update，Message+現在的Model（狀態）作為Update的輸入</li>
+<li>Update由message驅動</li>
+<li>Update在接受輸入之後會產生新的Model，再作為View的輸入。</li>
+<li>Elm Runtime呼叫View。</li>
+</ol><h3 id="Terminology-In-Elm"><a class="anchor hidden-xs" href="#Terminology-In-Elm" title="Terminology-In-Elm"><span class="octicon octicon-link"></span></a>Terminology In Elm</h3><ul>
+<li>Model: 應用程式的state</li>
+<li>Message: 應用程式的事件</li>
+<li>Update: 更新state的function</li>
+</ul><h3 id="Example"><a class="anchor hidden-xs" href="#Example" title="Example"><span class="octicon octicon-link"></span></a>Example</h3><p><a href="https://guide.elm-lang.org/architecture/" target="_blank" rel="noopener">https://guide.elm-lang.org/architecture/</a></p><h2 id="基礎語法微教學"><a class="anchor hidden-xs" href="#基礎語法微教學" title="基礎語法微教學"><span class="octicon octicon-link"></span></a>基礎語法微教學</h2><blockquote>
+<p><small><i class="fa fa-user"></i>  陳逸寧</small></p>
+</blockquote><p>Elm是一種編程語言，它會被編譯為HTML5: HTML, CSS和JavaScript。根據你顯示輸出結果的不同，它可能是一個內置了對象的&lt;canvas&gt;，或者一個更傳統的網頁。讓我重複一遍，Elm是一種語言，它會被編譯為三種語言來構建web應用。而且，它是一個擁有強類型和不可變（immutable）數據結構的函數式語言。</p><p>Elm是一種函數響應式編程語言，可以被編譯成（客戶端）的JavaScript。同時Elm也是一種靜態類型語言，這意味著編譯器能夠在編譯的過程中立即捕獲大部分錯誤，並且Elm提供了清晰，易懂的錯誤信息.<br>
+Elm語言在設計用戶交互（用戶界面）和網頁遊戲方面表現格外出色。</p><p><a href="https://learnxinyminutes.com/docs/elm/" target="_blank" rel="noopener">https://learnxinyminutes.com/docs/elm/</a></p><h3 id="Install"><a class="anchor hidden-xs" href="#Install" title="Install"><span class="octicon octicon-link"></span></a>Install</h3><p>Elm一整個platform都有打包成給windows的，還有給mac的，但是如果你不想要一整包，其實最常用的就是使用npm來安裝了～</p><blockquote>
+<p>npm install -g elm</p>
+</blockquote><p>NPM 寫網頁的應該熟悉：Node Package Manager 的簡稱，他是一個線上套件庫，可以下載各式各樣的 Javascript 套件來使用</p><h3 id="Command-Line"><a class="anchor hidden-xs" href="#Command-Line" title="Command-Line"><span class="octicon octicon-link"></span></a>Command Line</h3><ul>
+<li>
+<p>elm repl<br>
+simple Elm code within a command line without having to create a file. As the name indicates, it first reads the input, then evaluates it and finally prints the result.</p>
+</li>
+<li>
+<p>elm reactor<br>
+It will create a server that will compile your elm code on the fly, and you will be able to see the result directly on the browser.</p>
+</li>
+<li>
+<p>elm make<br>
+take Elm files and will produce native files for the web.</p>
+</li>
+</ul><blockquote>
+<p>elm make 01-button.elm --output=01-button.html</p>
+</blockquote><ul>
+<li>elm install<br>
+packages already written by other people that you can use in your projects</li>
+</ul><blockquote>
+<p>elm install elm/json [package name]</p>
+</blockquote><h3 id="Syntax-The-Basics"><a class="anchor hidden-xs" href="#Syntax-The-Basics" title="Syntax-The-Basics"><span class="octicon octicon-link"></span></a>Syntax: The Basics</h3><ul>
+<li>Comment</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code"><span class="hljs-comment">-- a single line comment</span>
+
+<span class="hljs-comment">{- a multiline comment
+   <span class="hljs-comment">{- can be nested -}</span>
+-}</span>
+</div></div></code></pre><ul>
+<li>Arithmetic</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code"><span class="hljs-number">1</span> + <span class="hljs-number">1</span> <span class="hljs-comment">-- 2</span>
+<span class="hljs-number">8</span> - <span class="hljs-number">1</span> <span class="hljs-comment">-- 7</span>
+<span class="hljs-number">10</span> * <span class="hljs-number">2</span> <span class="hljs-comment">-- 20</span>
+<span class="hljs-number">33</span> / <span class="hljs-number">2</span> <span class="hljs-comment">-- 16.5 with floating point division</span>
+<span class="hljs-number">33</span> // <span class="hljs-number">2</span> <span class="hljs-comment">-- 16 with integer division</span>
+</div></div></code></pre><ul>
+<li>Exponents</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span></div><div class="code"><span class="hljs-number">5</span> ^ <span class="hljs-number">2</span> <span class="hljs-comment">-- 25</span>
+</div></div></code></pre><ul>
+<li>Booleans</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code"><span class="hljs-title">not</span> <span class="hljs-type">True</span> <span class="hljs-comment">-- False</span>
+<span class="hljs-title">not</span> <span class="hljs-type">False</span> <span class="hljs-comment">-- True</span>
+<span class="hljs-number">1</span> == <span class="hljs-number">1</span> <span class="hljs-comment">-- True</span>
+<span class="hljs-number">1</span> /= <span class="hljs-number">1</span> <span class="hljs-comment">-- False</span>
+<span class="hljs-number">1</span> &lt; <span class="hljs-number">10</span> <span class="hljs-comment">-- True</span>
+</div></div></code></pre><ul>
+<li>Strings and characters</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code"><span class="hljs-string">"This is a string because it uses double quotes."</span>
+'a' <span class="hljs-comment">-- characters in single quotes</span>
+
+<span class="hljs-comment">-- Strings can be appended.</span>
+<span class="hljs-string">"Hello "</span> ++ <span class="hljs-string">"world!"</span> <span class="hljs-comment">-- "Hello world!"</span>
+</div></div></code></pre><h3 id="Lists-Tuples-and-Records"><a class="anchor hidden-xs" href="#Lists-Tuples-and-Records" title="Lists-Tuples-and-Records"><span class="octicon octicon-link"></span></a>Lists, Tuples, and Records</h3><ul>
+<li>Lists</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span></div><div class="code"><span class="hljs-comment">-- Every element in a list must have the same type.</span>
+[<span class="hljs-string">"the"</span>, <span class="hljs-string">"quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">"fox"</span>]
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-comment">-- The second example can also be written with two dots.</span>
+<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">5</span>
+
+<span class="hljs-comment">-- Append lists just like strings.</span>
+<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">5</span> ++ <span class="hljs-type">List</span>.range <span class="hljs-number">6</span> <span class="hljs-number">10</span> == <span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">10</span> <span class="hljs-comment">-- True</span>
+
+<span class="hljs-comment">-- To add one item, use "cons".</span>
+<span class="hljs-number">0</span> :: <span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-comment">-- [0, 1, 2, 3, 4, 5]</span>
+
+<span class="hljs-comment">-- The head and tail of a list are returned as a Maybe. Instead of checking</span>
+<span class="hljs-comment">-- every value to see if it's null, you deal with missing values explicitly.</span>
+<span class="hljs-type">List</span>.head (<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">5</span>) <span class="hljs-comment">-- Just 1</span>
+<span class="hljs-type">List</span>.tail (<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">5</span>) <span class="hljs-comment">-- Just [2, 3, 4, 5]</span>
+<span class="hljs-type">List</span>.head [] <span class="hljs-comment">-- Nothing</span>
+<span class="hljs-comment">-- List.functionName means the function lives in the List module.</span>
+</div></div></code></pre><ul>
+<li>Tuples</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span></div><div class="code"><span class="hljs-comment">-- Every element in a tuple can be a different type, but a tuple has a</span>
+<span class="hljs-comment">-- fixed length.</span>
+(<span class="hljs-string">"elm"</span>, <span class="hljs-number">42</span>)
+
+<span class="hljs-comment">-- Access the elements of a pair with the first and second functions.</span>
+<span class="hljs-comment">-- (This is a shortcut; we'll come to the "real way" in a bit.)</span>
+<span class="hljs-type">Tuple</span>.first (<span class="hljs-string">"elm"</span>, <span class="hljs-number">42</span>) <span class="hljs-comment">-- "elm"</span>
+<span class="hljs-type">Tuple</span>.second (<span class="hljs-string">"elm"</span>, <span class="hljs-number">42</span>) <span class="hljs-comment">-- 42</span>
+
+<span class="hljs-comment">-- The empty tuple, or "unit", is sometimes used as a placeholder.</span>
+<span class="hljs-comment">-- It is the only value of its type, also called "Unit".</span>
+()
+</div></div></code></pre><ul>
+<li>Records</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span></div><div class="code"><span class="hljs-comment">-- Records are like tuples but the fields have names. The order of fields</span>
+<span class="hljs-comment">-- doesn't matter. Notice that record values use equals signs, not colons.</span>
+{ x = <span class="hljs-number">3</span>, y = <span class="hljs-number">7</span> }
+
+<span class="hljs-comment">-- Access a field with a dot and the field name.</span>
+{ x = <span class="hljs-number">3</span>, y = <span class="hljs-number">7</span> }.x <span class="hljs-comment">-- 3</span>
+
+<span class="hljs-comment">-- Or with an accessor function, which is a dot and the field name on its own.</span>
+.y { x = <span class="hljs-number">3</span>, y = <span class="hljs-number">7</span> } <span class="hljs-comment">-- 7</span>
+
+<span class="hljs-comment">-- Update the fields of a record. (It must have the fields already.)</span>
+{ person |
+  name = <span class="hljs-string">"George"</span> }
+
+<span class="hljs-comment">-- Update multiple fields at once, using the current values.</span>
+{ particle |
+  position = particle.position + particle.velocity,
+  velocity = particle.velocity + particle.acceleration }
+</div></div></code></pre><h3 id="Control-flow"><a class="anchor hidden-xs" href="#Control-flow" title="Control-flow"><span class="octicon octicon-link"></span></a>Control flow</h3><ul>
+<li>if/else</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span></div><div class="code"><span class="hljs-comment">-- If statements always have an else, and the branches must be the same type.</span>
+<span class="hljs-title">if</span> powerLevel &gt; <span class="hljs-number">9000</span> <span class="hljs-keyword">then</span>
+  <span class="hljs-string">"WHOA!"</span>
+<span class="hljs-title">else</span>
+  <span class="hljs-string">"meh"</span>
+
+<span class="hljs-comment">-- If statements can be chained.</span>
+<span class="hljs-title">if</span> n &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+  <span class="hljs-string">"n is negative"</span>
+<span class="hljs-title">else</span> <span class="hljs-keyword">if</span> n &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+  <span class="hljs-string">"n is positive"</span>
+<span class="hljs-title">else</span>
+  <span class="hljs-string">"n is zero"</span>
+</div></div></code></pre><ul>
+<li>case</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span></div><div class="code"><span class="hljs-comment">-- Use case statements to pattern match on different possibilities.</span>
+<span class="hljs-title">case</span> aList <span class="hljs-keyword">of</span>
+  [] -&gt; <span class="hljs-string">"matches the empty list"</span>
+  [x]-&gt; <span class="hljs-string">"matches a list of exactly one item, "</span> ++ toString x
+  x::xs -&gt; <span class="hljs-string">"matches a list of at least one item whose head is "</span> ++ toString x
+<span class="hljs-comment">-- Pattern matches go in order. If we put [x] last, it would never match because</span>
+<span class="hljs-comment">-- x::xs also matches (xs would be the empty list). Matches do not "fall through".</span>
+<span class="hljs-comment">-- The compiler will alert you to missing or extra cases.</span>
+
+<span class="hljs-comment">-- Pattern match on a Maybe.</span>
+<span class="hljs-title">case</span> <span class="hljs-type">List</span>.head aList <span class="hljs-keyword">of</span>
+  <span class="hljs-type">Just</span> x -&gt; <span class="hljs-string">"The head is "</span> ++ toString x
+  <span class="hljs-type">Nothing</span> -&gt; <span class="hljs-string">"The list was empty."</span>
+</div></div></code></pre><h3 id="Functions"><a class="anchor hidden-xs" href="#Functions" title="Functions"><span class="octicon octicon-link"></span></a>Functions</h3><p>Elm’s syntax for functions is very minimal, relying mostly on whitespace, rather than parentheses and curly brackets. There is no “return” keyword.</p><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span></div><div class="code"><span class="hljs-comment">-- Define a function with its name, arguments, an equals sign, and the body.</span>
+<span class="hljs-title">multiply</span> a b =
+  a * b
+
+<span class="hljs-comment">-- Apply (call) a function by passing it arguments (no commas necessary).</span>
+<span class="hljs-title">multiply</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-comment">-- 42</span>
+
+<span class="hljs-comment">-- Partially apply a function by passing only some of its arguments.</span>
+<span class="hljs-comment">-- Then give that function a new name.</span>
+<span class="hljs-title">double</span> =
+  multiply <span class="hljs-number">2</span>
+
+<span class="hljs-comment">-- Constants are similar, except there are no arguments.</span>
+<span class="hljs-title">answer</span> =
+  <span class="hljs-number">42</span>
+</div></div></code></pre><ul>
+<li>pass arguments</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span></div><div class="code"><span class="hljs-comment">-- Pass functions as arguments to other functions.</span>
+<span class="hljs-type">List</span>.map double (<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">4</span>) <span class="hljs-comment">-- [2, 4, 6, 8]</span>
+
+<span class="hljs-comment">-- Or write an anonymous function.</span>
+<span class="hljs-type">List</span>.map (\a -&gt; a * <span class="hljs-number">2</span>) (<span class="hljs-type">List</span>.range <span class="hljs-number">1</span> <span class="hljs-number">4</span>) <span class="hljs-comment">-- [2, 4, 6, 8]</span>
+
+<span class="hljs-comment">-- You can pattern match in function definitions when there's only one case.</span>
+<span class="hljs-comment">-- This function takes one tuple rather than two arguments.</span>
+<span class="hljs-comment">-- This is the way you'll usually unpack/extract values from tuples.</span>
+<span class="hljs-title">area</span> (width, height) =
+  width * height
+
+<span class="hljs-title">area</span> (<span class="hljs-number">6</span>, <span class="hljs-number">7</span>) <span class="hljs-comment">-- 42</span>
+
+<span class="hljs-comment">-- Use curly brackets to pattern match record field names.</span>
+<span class="hljs-comment">-- **Use let to define intermediate values.**</span>
+<span class="hljs-title">volume</span> {width, height, depth} =
+  <span class="hljs-keyword">let</span>
+    area = width * height
+  <span class="hljs-keyword">in</span>
+    area * depth
+
+<span class="hljs-title">volume</span> { width = <span class="hljs-number">3</span>, height = <span class="hljs-number">2</span>, depth = <span class="hljs-number">7</span> } <span class="hljs-comment">-- 42</span>
+</div></div></code></pre><ul>
+<li>recursive</li>
+</ul><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span></div><div class="code"><span class="hljs-title">fib</span> n =
+  <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">2</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-number">1</span>
+  <span class="hljs-keyword">else</span>
+    fib (n - <span class="hljs-number">1</span>) + fib (n - <span class="hljs-number">2</span>)
+
+<span class="hljs-type">List</span>.map fib (<span class="hljs-type">List</span>.range <span class="hljs-number">0</span> <span class="hljs-number">8</span>) <span class="hljs-comment">-- [1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+
+<span class="hljs-comment">-- Another recursive function (use List.length in real code).</span>
+<span class="hljs-title">listLength</span> aList =
+  <span class="hljs-keyword">case</span> aList <span class="hljs-keyword">of</span>
+    [] -&gt; <span class="hljs-number">0</span>
+    x::xs -&gt; <span class="hljs-number">1</span> + listLength xs
+
+<span class="hljs-comment">-- Function calls happen before any infix operator. Parens indicate precedence.</span>
+<span class="hljs-title">cos</span> (degrees <span class="hljs-number">30</span>) ^ <span class="hljs-number">2</span> + sin (degrees <span class="hljs-number">30</span>) ^ <span class="hljs-number">2</span> <span class="hljs-comment">-- 1</span>
+<span class="hljs-comment">-- First degrees is applied to 30, then the result is passed to the trig</span>
+<span class="hljs-comment">-- functions, which is then squared, and the addition happens last.</span>
+</div></div></code></pre><h3 id="Types-and-Type-Annotations"><a class="anchor hidden-xs" href="#Types-and-Type-Annotations" title="Types-and-Type-Annotations"><span class="octicon octicon-link"></span></a>Types and Type Annotations</h3><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span></div><div class="code"><span class="hljs-comment">-- Functions have types too. Read -&gt; as "goes to". Think of the rightmost type</span>
+<span class="hljs-comment">-- as the type of the return value, and the others as arguments.</span>
+<span class="hljs-title">not</span> : <span class="hljs-type">Bool</span> -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">round</span> : <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Int</span>
+
+<span class="hljs-comment">-- When you define a value, it's good practice to write its type above it.</span>
+<span class="hljs-comment">-- The annotation is a form of documentation, which is verified by the compiler.</span>
+<span class="hljs-title">double</span> : <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">double</span> x = x * <span class="hljs-number">2</span>
+
+<span class="hljs-comment">-- Function arguments are passed in parentheses.</span>
+<span class="hljs-comment">-- Lowercase types are type variables: they can be any type, as long as each</span>
+<span class="hljs-comment">-- call is consistent.</span>
+<span class="hljs-type">List</span>.map : (a -&gt; b) -&gt; <span class="hljs-type">List</span> a -&gt; <span class="hljs-type">List</span> b
+<span class="hljs-comment">-- "List dot map has type a-goes-to-b, goes to list of a, goes to list of b."</span>
+
+<span class="hljs-comment">-- There are three special lowercase types: number, comparable, and appendable.</span>
+<span class="hljs-comment">-- Numbers allow you to use arithmetic on Ints and Floats.</span>
+<span class="hljs-comment">-- Comparable allows you to order numbers and strings, like a &lt; b.</span>
+<span class="hljs-comment">-- Appendable things can be combined with a ++ b.</span>
+</div></div></code></pre><h3 id="Type-Aliases-and-Union-Types"><a class="anchor hidden-xs" href="#Type-Aliases-and-Union-Types" title="Type-Aliases-and-Union-Types"><span class="octicon octicon-link"></span></a>Type Aliases and Union Types</h3><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span></div><div class="code"><span class="hljs-comment">-- When you write a record or tuple, its type already exists.</span>
+<span class="hljs-comment">-- (Notice that record types use colon and record values use equals.)</span>
+<span class="hljs-title">origin</span> : { x : <span class="hljs-type">Float</span>, y : <span class="hljs-type">Float</span>, z : <span class="hljs-type">Float</span> }
+<span class="hljs-title">origin</span> =
+  { x = <span class="hljs-number">0</span>, y = <span class="hljs-number">0</span>, z = <span class="hljs-number">0</span> }
+
+<span class="hljs-comment">-- You can give existing types a nice name with a type alias.</span>
+<span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> <span class="hljs-type">Point3D</span> =
+  { x : <span class="hljs-type">Float</span>, y : <span class="hljs-type">Float</span>, z : <span class="hljs-type">Float</span> }
+
+<span class="hljs-comment">-- If you alias a record, you can use the name as a constructor function.</span>
+<span class="hljs-title">otherOrigin</span> : <span class="hljs-type">Point3D</span>
+<span class="hljs-title">otherOrigin</span> =
+  <span class="hljs-type">Point3D</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+
+<span class="hljs-comment">-- But it's still the same type, so you can equate them.</span>
+<span class="hljs-title">origin</span> == otherOrigin <span class="hljs-comment">-- True</span>
+
+<span class="hljs-comment">-- By contrast, defining a union type creates a type that didn't exist before.</span>
+<span class="hljs-comment">-- A union type is so called because it can be one of many possibilities.</span>
+<span class="hljs-comment">-- Each of the possibilities is represented as a "tag".</span>
+<span class="hljs-keyword">type</span> <span class="hljs-type">Direction</span> =
+  <span class="hljs-type">North</span> | <span class="hljs-type">South</span> | <span class="hljs-type">East</span> | <span class="hljs-type">West</span>
+
+<span class="hljs-comment">-- Tags can carry other values of known type. This can work recursively.</span>
+<span class="hljs-keyword">type</span> <span class="hljs-type">IntTree</span> =
+  <span class="hljs-type">Leaf</span> | <span class="hljs-type">Node</span> <span class="hljs-type">Int</span> <span class="hljs-type">IntTree</span> <span class="hljs-type">IntTree</span>
+<span class="hljs-comment">-- "Leaf" and "Node" are the tags. Everything following a tag is a type.</span>
+
+<span class="hljs-comment">-- Tags can be used as values or functions.</span>
+<span class="hljs-title">root</span> : <span class="hljs-type">IntTree</span>
+<span class="hljs-title">root</span> =
+  <span class="hljs-type">Node</span> <span class="hljs-number">7</span> <span class="hljs-type">Leaf</span> <span class="hljs-type">Leaf</span>
+
+<span class="hljs-comment">-- Union types (and type aliases) can use type variables.</span>
+<span class="hljs-keyword">type</span> <span class="hljs-type">Tree</span> a =
+  <span class="hljs-type">Leaf</span> | <span class="hljs-type">Node</span> a (<span class="hljs-type">Tree</span> a) (<span class="hljs-type">Tree</span> a)
+<span class="hljs-comment">-- "The type tree-of-a is a leaf, or a node of a, tree-of-a, and tree-of-a."</span>
+
+<span class="hljs-comment">-- Pattern match union tags. The uppercase tags will be matched exactly. The</span>
+<span class="hljs-comment">-- lowercase variables will match anything. Underscore also matches anything,</span>
+<span class="hljs-comment">-- but signifies that you aren't using it.</span>
+<span class="hljs-title">leftmostElement</span> : <span class="hljs-type">Tree</span> a -&gt; <span class="hljs-type">Maybe</span> a
+<span class="hljs-title">leftmostElement</span> tree =
+  <span class="hljs-keyword">case</span> tree <span class="hljs-keyword">of</span>
+    <span class="hljs-type">Leaf</span> -&gt; <span class="hljs-type">Nothing</span>
+    <span class="hljs-type">Node</span> x <span class="hljs-type">Leaf</span> _ -&gt; <span class="hljs-type">Just</span> x
+    <span class="hljs-type">Node</span> _ subtree _ -&gt; leftmostElement subtree
+
+<span class="hljs-comment">-- That's pretty much it for the language itself. Now let's see how to organize</span>
+<span class="hljs-comment">-- and run your code.</span>
+</div></div></code></pre><h3 id="Modules-and-Imports"><a class="anchor hidden-xs" href="#Modules-and-Imports" title="Modules-and-Imports"><span class="octicon octicon-link"></span></a>Modules and Imports</h3><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span></div><div class="code"><span class="hljs-comment">-- The core libraries are organized into modules, as are any third-party</span>
+<span class="hljs-comment">-- libraries you may use. For large projects, you can define your own modules.</span>
+
+<span class="hljs-comment">-- Put this at the top of the file. If omitted, you're in Main.</span>
+<span class="hljs-keyword">module</span> Name <span class="hljs-keyword">where</span>
+
+<span class="hljs-comment">-- By default, everything is exported. You can specify exports explicitly.</span>
+<span class="hljs-keyword">module</span> Name (<span class="hljs-type">MyType</span>, myValue) <span class="hljs-keyword">where</span>
+
+<span class="hljs-comment">-- One common pattern is to export a union type but not its tags. This is known</span>
+<span class="hljs-comment">-- as an "opaque type", and is frequently used in libraries.</span>
+
+<span class="hljs-comment">-- Import code from other modules to use it in this one.</span>
+<span class="hljs-comment">-- Places Dict in scope, so you can call Dict.insert.</span>
+import Dict
+
+<span class="hljs-comment">-- Imports the Dict module and the Dict type, so your annotations don't have to</span>
+<span class="hljs-comment">-- say Dict.Dict. You can still use Dict.insert.</span>
+import Dict <span class="hljs-keyword">exposing</span> (<span class="hljs-type">Dict</span>)
+
+<span class="hljs-comment">-- Rename an import.</span>
+<span class="hljs-keyword">import</span> Graphics.Collage <span class="hljs-keyword">as</span> C
+</div></div></code></pre><h3 id="Ports"><a class="anchor hidden-xs" href="#Ports" title="Ports"><span class="octicon octicon-link"></span></a>Ports</h3><pre><code class="elm hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span></div><div class="code"><span class="hljs-comment">-- A port indicates that you will be communicating with the outside world.</span>
+<span class="hljs-comment">-- Ports are only allowed in the Main module.</span>
+
+<span class="hljs-comment">-- An incoming port is just a type signature.</span>
+<span class="hljs-keyword">port</span> clientID : Int
+
+<span class="hljs-comment">-- An outgoing port has a definition.</span>
+<span class="hljs-keyword">port</span> clientOrders : List String
+<span class="hljs-keyword">port</span> clientOrders = ["Books", "Groceries", "Furniture"]
+
+<span class="hljs-comment">-- We won't go into the details, but you set up callbacks in JavaScript to send</span>
+<span class="hljs-comment">-- on incoming ports and receive on outgoing ports.</span>
+</div></div></code></pre><h2 id="Elm-vs-javascript"><a class="anchor hidden-xs" href="#Elm-vs-javascript" title="Elm-vs-javascript"><span class="octicon octicon-link"></span></a>Elm vs. javascript</h2><blockquote>
+<p><small><i class="fa fa-user"></i>  王蒂元</small></p>
+</blockquote><h3 id="Syntax"><a class="anchor hidden-xs" href="#Syntax" title="Syntax"><span class="octicon octicon-link"></span></a>Syntax</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>JavaScript</th>
+<th>Elm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-line String</td>
+<td>didn’t support</td>
+<td>“”“string”""</td>
+</tr>
+<tr>
+<td>Character</td>
+<td>‘a’ , ‘abc’ are strings</td>
+<td>‘a’</td>
+</tr>
+<tr>
+<td>Single Quotes String</td>
+<td>‘Hello world’</td>
+<td>didn’t support</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true/false</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>//</td>
+<td>- -</td>
+</tr>
+</tbody>
+</table><h3 id="Features"><a class="anchor hidden-xs" href="#Features" title="Features"><span class="octicon octicon-link"></span></a>Features</h3><h4 id="1-Immutable-Datas"><a class="anchor hidden-xs" href="#1-Immutable-Datas" title="1-Immutable-Datas"><span class="octicon octicon-link"></span></a>1. Immutable Datas</h4><ul>
+<li>When we see a value we can be sure it will stay the same–reading/testing code becomes easier.
+<ul>
+<li>我們可以確認變數的值保持一致，使得我們更容易閱讀及測試我們的程式。</li>
+</ul>
+</li>
+<li>We don’t have to worry about runtime errors related to unexpected values because of mutation.
+<ul>
+<li>我們不必擔心因為變數的變動而產生 runtime error</li>
+</ul>
+</li>
+</ul><h4 id="2-Pure-Functions"><a class="anchor hidden-xs" href="#2-Pure-Functions" title="2-Pure-Functions"><span class="octicon octicon-link"></span></a>2. Pure Functions</h4><ul>
+<li>Elm functions are pure and they receive inputs and produce new values as output, also, they always return the same result for each input without producing side-effects.
+<ul>
+<li>Pure Function 產生新的變數作為 output 使得原始的變數保持不變，不會產生所謂的 side-effects。</li>
+</ul>
+</li>
+</ul><h4 id="3-Static-Types"><a class="anchor hidden-xs" href="#3-Static-Types" title="3-Static-Types"><span class="octicon octicon-link"></span></a>3. Static Types</h4><ul>
+<li>Elm has an inferred type system. Which means that we don’t have to write types from the beginning and the compiler will try to infer the appropriate type for our functions.
+<ul>
+<li>Elm 有一個推斷 type 的系統，表示我們不需要賦於 type，compiler 會直接推斷 functions 的 type。</li>
+</ul>
+</li>
+</ul><h4 id="4-Compatible-with-Your-Existing-Project"><a class="anchor hidden-xs" href="#4-Compatible-with-Your-Existing-Project" title="4-Compatible-with-Your-Existing-Project"><span class="octicon octicon-link"></span></a>4. Compatible with Your Existing Project</h4><ul>
+<li>We can include certain components made with Elm in an existing project, like Javascript…
+<ul>
+<li>我們可以再 elm 中 import 已經存在的 project。</li>
+</ul>
+</li>
+</ul><h4 id="5-A-sane-package-manager"><a class="anchor hidden-xs" href="#5-A-sane-package-manager" title="5-A-sane-package-manager"><span class="octicon octicon-link"></span></a>5. A sane package manager</h4><ul>
+<li>The package manager in Elm automatically handles version numbers depending on the changes made, so we will never get breaking changes in a minor version anymore.
+<ul>
+<li>package manager 會自動 import 最新版本，所以我們不會因版本的變動而發生錯誤。</li>
+</ul>
+</li>
+</ul><h4 id="6-Beginner-friendly-Compiler"><a class="anchor hidden-xs" href="#6-Beginner-friendly-Compiler" title="6-Beginner-friendly-Compiler"><span class="octicon octicon-link"></span></a>6. Beginner-friendly Compiler</h4><ul>
+<li>We all know that compilers usually produce unreadable messages, but Elm will point out where the problem is, and an explanation of how to fix it.
+<ul>
+<li>點出 error 並加以解釋，使得我們更容易修改我們的程式。</li>
+</ul>
+</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Elm" title="Elm">Elm</a><ul class="nav">
+<li><a href="#Reference" title="Reference">Reference</a></li>
+<li><a href="#什麼是Elm？" title="什麼是Elm？">什麼是Elm？</a><ul class="nav">
+<li><a href="#簡單來說…" title="簡單來說…">簡單來說…</a></li>
+<li><a href="#Feature-official-meantioned" title="Feature (official meantioned)">Feature (official meantioned)</a></li>
+<li><a href="#REPL的編程環境" title="REPL的編程環境">REPL的編程環境</a></li>
+<li><a href="#參考" title="參考">參考</a></li>
+</ul>
+</li>
+<li><a href="#特性（Benefits-of-Using-Elm–immutablepure-function）" title="特性（Benefits of Using Elm–immutable/pure function）">特性（Benefits of Using Elm–immutable/pure function）</a><ul class="nav">
+<li><a href="#Immutability" title="Immutability">Immutability</a></li>
+<li><a href="#Pure-function" title="Pure function">Pure function</a></li>
+</ul>
+</li>
+<li><a href="#架構（model-update-view）" title="架構（model, update, view）">架構（model, update, view）</a><ul class="nav">
+<li><a href="#The-Basic-Pattern" title="The Basic Pattern">The Basic Pattern</a></li>
+<li><a href="#Elm-Architecture" title="Elm Architecture">Elm Architecture</a></li>
+<li><a href="#Terminology-In-Elm" title="Terminology In Elm">Terminology In Elm</a></li>
+<li><a href="#Example" title="Example">Example</a></li>
+</ul>
+</li>
+<li><a href="#基礎語法微教學" title="基礎語法微教學">基礎語法微教學</a><ul class="nav">
+<li><a href="#Install" title="Install">Install</a></li>
+<li><a href="#Command-Line" title="Command Line">Command Line</a></li>
+<li><a href="#Syntax-The-Basics" title="Syntax: The Basics">Syntax: The Basics</a></li>
+<li><a href="#Lists-Tuples-and-Records" title="Lists, Tuples, and Records">Lists, Tuples, and Records</a></li>
+<li><a href="#Control-flow" title="Control flow">Control flow</a></li>
+<li><a href="#Functions" title="Functions">Functions</a></li>
+<li><a href="#Types-and-Type-Annotations" title="Types and Type Annotations">Types and Type Annotations</a></li>
+<li><a href="#Type-Aliases-and-Union-Types" title="Type Aliases and Union Types">Type Aliases and Union Types</a></li>
+<li><a href="#Modules-and-Imports" title="Modules and Imports">Modules and Imports</a></li>
+<li><a href="#Ports" title="Ports">Ports</a></li>
+</ul>
+</li>
+<li><a href="#Elm-vs-javascript" title="Elm vs. javascript">Elm vs. javascript</a><ul class="nav">
+<li><a href="#Syntax" title="Syntax">Syntax</a></li>
+<li><a href="#Features" title="Features">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Elm" title="Elm">Elm</a><ul class="nav">
+<li><a href="#Reference" title="Reference">Reference</a></li>
+<li><a href="#什麼是Elm？" title="什麼是Elm？">什麼是Elm？</a><ul class="nav">
+<li><a href="#簡單來說…" title="簡單來說…">簡單來說…</a></li>
+<li><a href="#Feature-official-meantioned" title="Feature (official meantioned)">Feature (official meantioned)</a></li>
+<li><a href="#REPL的編程環境" title="REPL的編程環境">REPL的編程環境</a></li>
+<li><a href="#參考" title="參考">參考</a></li>
+</ul>
+</li>
+<li><a href="#特性（Benefits-of-Using-Elm–immutablepure-function）" title="特性（Benefits of Using Elm–immutable/pure function）">特性（Benefits of Using Elm–immutable/pure function）</a><ul class="nav">
+<li><a href="#Immutability" title="Immutability">Immutability</a></li>
+<li><a href="#Pure-function" title="Pure function">Pure function</a></li>
+</ul>
+</li>
+<li><a href="#架構（model-update-view）" title="架構（model, update, view）">架構（model, update, view）</a><ul class="nav">
+<li><a href="#The-Basic-Pattern" title="The Basic Pattern">The Basic Pattern</a></li>
+<li><a href="#Elm-Architecture" title="Elm Architecture">Elm Architecture</a></li>
+<li><a href="#Terminology-In-Elm" title="Terminology In Elm">Terminology In Elm</a></li>
+<li><a href="#Example" title="Example">Example</a></li>
+</ul>
+</li>
+<li><a href="#基礎語法微教學" title="基礎語法微教學">基礎語法微教學</a><ul class="nav">
+<li><a href="#Install" title="Install">Install</a></li>
+<li><a href="#Command-Line" title="Command Line">Command Line</a></li>
+<li><a href="#Syntax-The-Basics" title="Syntax: The Basics">Syntax: The Basics</a></li>
+<li><a href="#Lists-Tuples-and-Records" title="Lists, Tuples, and Records">Lists, Tuples, and Records</a></li>
+<li><a href="#Control-flow" title="Control flow">Control flow</a></li>
+<li><a href="#Functions" title="Functions">Functions</a></li>
+<li><a href="#Types-and-Type-Annotations" title="Types and Type Annotations">Types and Type Annotations</a></li>
+<li><a href="#Type-Aliases-and-Union-Types" title="Type Aliases and Union Types">Type Aliases and Union Types</a></li>
+<li><a href="#Modules-and-Imports" title="Modules and Imports">Modules and Imports</a></li>
+<li><a href="#Ports" title="Ports">Ports</a></li>
+</ul>
+</li>
+<li><a href="#Elm-vs-javascript" title="Elm vs. javascript">Elm vs. javascript</a><ul class="nav">
+<li><a href="#Syntax" title="Syntax">Syntax</a></li>
+<li><a href="#Features" title="Features">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
