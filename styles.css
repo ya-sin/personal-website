@@ -14,13 +14,19 @@ body {
     margin: 3em 1.5em;
 }
 
+@media only screen and (max-width: 650px) {
+    body {
+        margin: 3em 0;
+    }
+}
+
 main {
     margin: 7em auto;
     padding: 0 10em;
     width: 75%;
 }
 a {
-    color: #660000;
+    color: #B22222;
 }
 p {
     line-height: 1.5em;
@@ -63,8 +69,9 @@ nav>.navigator {
     justify-content: center;
 }
 .navigator>a {
-    color: #660000;
+    color: #B22222;
     margin: 0 1em;
+    font-weight: bold;
 }
 a {
     text-decoration: none;
@@ -73,6 +80,7 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    color: #800000;
 }
 
 
@@ -213,7 +221,7 @@ footer {
         grid-template-columns: auto;
     }
     .content>.content_text {
-        margin-top: 1.2em;
+        margin: 1.2em 0;
     }
 
 }
@@ -229,6 +237,7 @@ footer {
     grid-area: content_text;
     margin: .5em 2em;
 }
+
 
 hr {
     margin: auto;
