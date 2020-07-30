@@ -100,10 +100,16 @@ a:hover {
 .about {
     margin-bottom: 5em;
     display: grid;
-    grid-template-areas: 'about_text about_picture' 'about_text about_picture';
+    grid-template-areas: 'about_text about_picture' 'about_text about_profile-badge';
     grid-template-columns: 1fr 1fr;
     line-height: 1.75em;
 
+}
+
+.about>.about_profile-badge {
+    grid-area: about_profile-badge;
+    justify-self: center;
+    margin: 1.2em 0;
 }
 
 .about_text>a:hover {
@@ -116,7 +122,7 @@ a:hover {
 
 @media only screen and (max-width: 750px) {
     .about {
-        grid-template-areas:  'about_picture' 'about_text';
+        grid-template-areas:  'about_picture' 'about_text' 'about_profile-badge';
         grid-template-columns: auto;
     }
     .about>.about_text {
